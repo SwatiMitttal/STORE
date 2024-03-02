@@ -1,0 +1,22 @@
+{% extends 'home.html' %}
+{%load static%}
+
+{% block content %}
+<div id='div4'>
+   
+</div>
+
+
+<script type='text/babel'>
+ function Aler(){   
+return <div>
+<br></br><br></br>
+<h4 type='button' onClick={ console.log('HELLO')}>CLICK ME</h4>
+</div>
+ }
+const ele=document.getElementById('div4');
+const root=ReactDOM.createRoot(ele)
+root.render(<Aler/>)
+    
+    </script>
+    {% endblock %}

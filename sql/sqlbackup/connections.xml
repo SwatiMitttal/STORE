@@ -1,0 +1,47 @@
+<?xml version="1.0"?>
+<data grt_format="2.0">
+  <value _ptr_="00000224ED50BEE0" type="list" content-type="object" content-struct-name="db.mgmt.Connection">
+    <value type="object" struct-name="db.mgmt.Connection" id="{EA2DF978-05EA-4806-AFEA-A1A1D7F671B4}" struct-checksum="0x96ba47d8">
+      <link type="object" struct-name="db.mgmt.Driver" key="driver">com.mysql.rdbms.mysql.driver.native</link>
+      <value type="string" key="hostIdentifier">Mysql@localhost:3306</value>
+      <value type="int" key="isDefault">0</value>
+      <value _ptr_="00000224F318D850" type="dict" key="modules"/>
+      <value _ptr_="00000224F318D970" type="dict" key="parameterValues">
+        <value type="string" key="SQL_MODE"></value>
+        <value type="string" key="hostName">localhost</value>
+        <value type="string" key="password"></value>
+        <value type="int" key="port">3306</value>
+        <value type="string" key="schema"></value>
+        <value type="string" key="sslCA"></value>
+        <value type="string" key="sslCert"></value>
+        <value type="string" key="sslCipher"></value>
+        <value type="string" key="sslKey"></value>
+        <value type="int" key="useSSL">1</value>
+        <value type="string" key="userName">root</value>
+      </value>
+      <value type="string" key="name">Local instance MySQL80</value>
+      <link type="object" struct-name="GrtObject" key="owner">{B169443D-9FA7-4E71-87F2-6A808C9EB58A}</link>
+    </value>
+    <value type="object" struct-name="db.mgmt.Connection" id="{C8386EF0-9E53-4F7E-AB99-99ED8ADD68A2}" struct-checksum="0x96ba47d8">
+      <link type="object" struct-name="db.mgmt.Driver" key="driver">com.mysql.rdbms.mysql.driver.native</link>
+      <value type="string" key="hostIdentifier">Mysql@127.0.0.1:5555</value>
+      <value type="int" key="isDefault">1</value>
+      <value _ptr_="00000224F4D86AF0" type="dict" key="modules"/>
+      <value _ptr_="00000224F4D864F0" type="dict" key="parameterValues">
+        <value type="string" key="SQL_MODE"></value>
+        <value type="string" key="hostName">127.0.0.1</value>
+        <value type="string" key="password"></value>
+        <value type="int" key="port">5555</value>
+        <value type="string" key="schema"></value>
+        <value type="string" key="sslCA"></value>
+        <value type="string" key="sslCert"></value>
+        <value type="string" key="sslCipher"></value>
+        <value type="string" key="sslKey"></value>
+        <value type="int" key="useSSL">1</value>
+        <value type="string" key="userName">root1</value>
+      </value>
+      <value type="string" key="name">myconnection</value>
+      <link type="object" struct-name="GrtObject" key="owner">{B169443D-9FA7-4E71-87F2-6A808C9EB58A}</link>
+    </value>
+  </value>
+</data>

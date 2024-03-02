@@ -1,0 +1,117 @@
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+         {% load static%}
+         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+    <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+    <script src="https://unpkg.com/@babel/standalone/babel.min.js"></script>
+    
+    <link  rel='stylesheet' type='text/css' href='{% static "home.css" %}' >
+           
+    </head>
+<style>
+    h2,#p1,#p2,h3,a,p,li,h4,h5,h6{
+        font-weight: 700;
+        color:#fb8500;
+        animation: mymove 6s infinite;
+        }
+        h5,h6,button{
+        font-weight: 700;
+        
+        }
+        
+        @keyframes mymove {
+            from{color:#fb8500;}
+            to{color:#606c38;}
+        }
+        td {
+          font-weight:700;
+          
+        }
+
+        #dd {
+            width: 400px;
+            height: 100px;
+            background: #dda15e;
+            position: relative;
+            animation: mm 5s infinite;
+          }
+
+        @keyframes mm{
+            
+                0%   {left: 0px;background:#606c38;}
+                25%  {left: 20px;backround:#dda15e;}
+                75%  {left: 50px}
+                100% {left: 100px;}
+              }
+              img{
+                max-width:120px;
+            }
+          
+          h7,#b3{
+            background:#bb9457;
+            width:120px;
+            height=100px;
+            font-color:black;
+            font-weight:700;
+          }
+          .dropdown-item,a{
+            wordwrap:break-word;
+          }
+       
+</style>
+<body>
+    
+    <div  class='container'>
+       <div class='row'>
+         <div class='col-md-3'>
+        
+            <img   src='{% static "images/rkcircle.jpg" %}'  class='' alt='' >
+            
+            <h2 >RANG&KESAR<span class='badge-dark' ></span></h2>
+         
+           <p id='p1'>PURE FABRICS</p>
+           <p id='p2'>INTRICATE HAND EMBROIDERED </p>
+          
+            {% block content1 %} {% endblock %}
+         </div>
+       <div class='col-md-6'>
+        <br></br> 
+        
+         
+          {% block content2 %}
+          {% endblock %}
+        </div>
+      
+        <div class='col-md-3'>
+        
+               {% block content %}  
+               {% endblock %}
+
+               {% block content3%}
+               {% endblock %}
+        </div>
+        
+     </div>  
+    </div>
+
+
+
+
+
+</body>
+
+
+
+</html>

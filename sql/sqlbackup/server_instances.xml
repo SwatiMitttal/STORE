@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<data grt_format="2.0">
+  <value _ptr_="00000224ED50C5E0" type="list" content-type="object" content-struct-name="db.mgmt.ServerInstance">
+    <value type="object" struct-name="db.mgmt.ServerInstance" id="{380E98E3-2A58-4ACD-9396-7EC4ED1431CB}" struct-checksum="0x367436e2">
+      <link type="object" struct-name="db.mgmt.Connection" key="connection">{EA2DF978-05EA-4806-AFEA-A1A1D7F671B4}</link>
+      <value _ptr_="00000224F318DAF0" type="dict" key="loginInfo">
+        <value type="string" key="wmi.hostName"></value>
+        <value type="string" key="wmi.userName"></value>
+      </value>
+      <value _ptr_="00000224F318DE50" type="dict" key="serverInfo">
+        <value type="int" key="setupPending">0</value>
+        <value type="string" key="sys.config.path">C:\ProgramData\MySQL\MySQL Server 8.0\my.ini</value>
+        <value type="int" key="sys.config.path.lock">1</value>
+        <value type="string" key="sys.config.section">mysqld</value>
+        <value type="string" key="sys.mysqld.service_name">MySQL80</value>
+        <value type="string" key="sys.preset">Custom</value>
+        <value type="string" key="sys.sudo"></value>
+        <value type="string" key="sys.system">Windows</value>
+        <value type="int" key="windowsAdmin">1</value>
+      </value>
+      <value type="string" key="name">Local MySQL80</value>
+    </value>
+    <value type="object" struct-name="db.mgmt.ServerInstance" id="{3F138A22-B9A5-4163-9AB0-DE4E24A6679A}" struct-checksum="0x367436e2">
+      <link type="object" struct-name="db.mgmt.Connection" key="connection">{C8386EF0-9E53-4F7E-AB99-99ED8ADD68A2}</link>
+      <value _ptr_="00000224F5606690" type="dict" key="loginInfo">
+        <value type="string" key="ssh.hostName"></value>
+        <value type="string" key="ssh.key">C:\Users\Administrator\AppData\Roaming/.ssh/ssh_private_key</value>
+        <value type="string" key="ssh.localPort">3306</value>
+        <value type="int" key="ssh.useKey">0</value>
+        <value type="string" key="ssh.userName">mysql</value>
+      </value>
+      <value _ptr_="00000224F5605F10" type="dict" key="serverInfo">
+        <value type="int" key="setupPending">0</value>
+        <value type="string" key="sys.sudo"></value>
+        <value type="int" key="windowsAdmin">1</value>
+      </value>
+      <value type="string" key="name">myconnection</value>
+      <link type="object" struct-name="GrtObject" key="owner">{B169443D-9FA7-4E71-87F2-6A808C9EB58A}</link>
+    </value>
+  </value>
+</data>

@@ -1,0 +1,31 @@
+{% for item in citems %}
+<nav className="navbar navbar-expand-sm bg-dark navbar-dark">
+    <div className="container-fluid">
+      <ul class='nav nav-tabs'>
+        <l1 class='nav-item pr-4'>
+            <label>PRODUCT</label>
+            <h5>{{item.product.pname}}</h5></l1>
+            <li class='nav-item'>
+            <label> PRICE</label>
+              <h5>{{item.product.price}}</h5></li>
+            <li class='nav-item'>
+            <label> QUANTITY </label>
+            <h5>{{item.quantity}}  </h5>  </li>
+            <li class='nav-item'>
+            <label>TOTAL AMOUNT</label>
+            <h5>Rs. {{total}}  </h5>
+            </li></ul>
+        </div></nav>
+        <div class='container-fluid'>
+          
+
+ {% endfor %}   
+
+ <table class='table table-striped'>
+
+  <tr><th scope='col pl-2 mr-2'>PRODUCT </th>
+    <th scope='col pl-2 mr-2'>PRICE</th>
+     <th scope='col pl-2 mr-2'>TOTAL</th> 
+     <th scope='col pl-2 mr-2 '>QUANTITY</th>
+    </tr>
+   

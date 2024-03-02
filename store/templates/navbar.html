@@ -1,0 +1,27 @@
+{% extends 'page1.html' %}
+
+<script type="text/javascript" src="backend/static/index.js"></script>
+{% load static %}
+{% block content3 %}
+
+<h5 id='navv'></h5>
+<div id="div1">
+    <p id="p1">VIBRANT COLORS.</p>
+    <p id="p2">100% PURE SILK FARICS .</p>
+    <p id='p3'></p>
+  </div>
+  
+  <script type='text/babel'>
+    
+  const para = document.createElement("p");
+  const node = document.createTextNode("This is new.");
+  para.appendChild(node);
+  
+  const element = document.getElementById("div1");
+  element.appendChild(para);
+  const myNodeList = document.querySelectorAll("p");
+  //document.getElementById('p3').innerHTML=myNodeList.length;
+  </script>
+
+
+{% endblock %}

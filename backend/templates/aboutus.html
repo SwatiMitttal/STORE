@@ -1,0 +1,29 @@
+
+{% extends 'lgroup.html' %}
+{% load static %}
+{% block content%}
+
+
+
+  <br><br><br>
+  <div id='aboutus'></div>
+  <script  type='text/babel'>
+   
+   function Aboutus(){
+    return <div>
+    
+   <p>  WE ARE A COMPANY THAT BELIEVES IN ADDING BEAUTY TO THE WORLD    </p>
+   <p>  ALL THE PRODUCTS ARE HAND CRAFTED WITH INTRICATE WORK           </p>
+   <p>  FABRICS ARE DESIGNED WITH INTRICATE HAND EMBROIDERIES AND PURE TEXTURES</p>
+    </div>
+   }
+   
+   const e=document.getElementById('aboutus');
+   const root=ReactDOM.createRoot(e);
+   root.render(<Aboutus/>)
+
+  // export default Aboutus;
+</script>
+
+
+{% endblock %}

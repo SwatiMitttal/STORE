@@ -1,0 +1,124 @@
+{% extends 'page1.html' %}
+<script type="text/javascript" src="backend/static/index.js"></script>
+{% load static %}
+{% block content2 %}
+
+<div class='row'>
+ <button class="btn  dropdown-toggle" type="button" 
+           data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+           <img   src='{% static "images/prods1.png" %}'  class='img-fluid' alt='' > </button>
+          <a href={% url 'cart' %}>   
+             <span  class='glyphicon glyphicon-shopping-cart' ></span>
+         <span class='badge badge-pill notify' >{{cc}}</span> </a>
+          <div class="dropdown-menu">
+            {% for cat in links %}
+              <a class="dropdown-item" href="{{cat.get_url}}">{{cat}}</a>
+            {% endfor %}
+          </div>
+  
+    <form  action='{% url "search" %}' method='GET'>
+      <div class='input-group-prepend ml-3'>
+        
+        <input class='form-control' type='text' placeholder='search' name='kword'>
+       <button class='btn btn-primary'> <i class='fa fa-search ml-3' ></i></button>
+      </div>
+  
+    </form> 
+</div>
+<div class='container'>
+  <h5>{{pcount}} ITEMS FOUND</h5>
+  <div class='card-product-grid'>
+            {% for product in prods %}
+             
+           
+     <div class='card' style='width:300px;'>
+         
+         <img  src= '{{product.images.url}}' class='img-fluid card-img'>
+            
+             <h6 class='card-header' style='background:#bb9457;color:black;'> {{product.desc}}</h6>
+             <h5  class='price mt-1'>Rs {{product.price}}<span>      </span>
+            {% if product.stock <= 0 %}
+            <h4>OUT OF STOCK</h4>
+            {% else %}
+            <a href={% url  'add_cart' product.id %} >
+            <button id='b{{product.id}}'   type='button' class='text-wrap'>ADD TO CART<span class='glyphicon glyphicon-shopping-cart'  ></span>
+            </button></a>
+          </h5>
+            {% endif %}
+
+            <label id='l1'>SELECT SIZE</label>
+            <h5 id='{{product.id}}'></h5>
+             </div> 
+             
+           {% endfor %}
+</div>
+
+
+       
+<nav class='navbar navbar-expand-sm '>
+  {% if prods.has_other_pages %}
+  <ul class='nav nav-tabs'>
+    {% if prods.has_previous %}
+      <li class='nav-item'><a class='page-link' href='?page={{prods.previous_page_number}}'
+        >PREVIOUS</a></li>
+    {% else %}
+      <li class='nav-item disabled'><a class='page-link' href='#'>PREVIOUS</a></li>
+    {% endif %}
+  {% for i in prods.paginator.page_range %}
+  <li class='nav-item '><a class='page-link' href='?page={{prods.paginator.page_number}}'>{{i}}</a></li>
+    {% endfor %}
+    
+      {% if prods.has_next %}
+        <li class='nav-item'><a class='page-link' href='?page={{prods.next_page_number}}'
+          >NEXT</a></li>
+      {% else %}
+        <li class='nav-item disabled'><a class='page-link' href='#'>NEXT</a></li>
+      {% endif %}
+
+
+</ul>
+   {% endif %}
+</nav>
+</div>
+<script type='text/babel'>
+  class Nav1 extends React.Component{
+    constructor(props){
+        super(props);
+      this.state={
+       index:0,
+      };
+      props={
+       typecl:['XS','S','M','L','XL']
+      };
+    }
+      render(){
+        return <div>
+            <nav className="navbar navbar-expand-sm bg-dark navbar-dark">
+                <div className="container-fluid">
+                  <ul className="nav nav-tabs">
+                    {this.props.typecl.map((cl,ind)=>  <li className="nav-item"
+                    onClick={()=>{this.state.index=ind;alert(ind);}}   key={cl}>
+
+                        <a className="nav-link active" href="#">{cl}</a>
+                      </li>
+                        )}
+                   </ul>
+                </div>
+              </nav>
+        </div>
+      
+    }
+   }
+
+  const sizes=['XS','S','M','L','XL'];
+  const l=['1','2','3','4'];
+let demo = <Nav1 typecl={sizes}/>;
+for(let i=0;i<=l.length;i++){
+ReactDOM.render(demo,document.getElementById(l[i]));
+}
+document.getElementById('b3').addEventListener('click',function(){alert('hello dear');});
+
+</script>
+
+
+{% endblock %}

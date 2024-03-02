@@ -1,0 +1,42 @@
+{% extends 'home.html'%}
+
+{% block content1 %}
+   <div id='div1'>
+    </div>
+   <script type='text/babel'>
+   
+   class Lgroup extends  React.Component{
+     
+   constructor(props){
+      super(props);
+      this.state={
+         index:0
+      };
+      props={
+         items:['ABOUT US','COLLECTION','FABRICS'],
+         ff:['','#']
+      };
+
+      
+   }
+   render() {     
+      return <div >
+      <ul  className='list-group'>
+        {this.props.items.map( (item,ind) => <a  href={this.props.ff[ind]}
+         className='list-group-item'  
+         key={ind}   >
+         {item}</a> )}
+         </ul>
+       </div>
+      }
+   
+   }
+   const items=['ABOUT US','COLLECTION','FABRICS','EXCLUSIVE','REVIEWS'];
+   const ff=[ 'aboutus/' ,'store/','#','#'];
+   const ll=<Lgroup items={items}  ff={ff}/>
+   const container=document.getElementById('div1');
+   const root=ReactDOM.createRoot(container);
+   root.render(ll);
+
+   </script>
+{% endblock %}

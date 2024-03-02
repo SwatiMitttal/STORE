@@ -1,0 +1,82 @@
+{% extends 'page1.html'%}
+{% load static %}
+{% block content2 %}
+<style>
+   td{
+    font-size:80%;
+    font-weight:700;
+    font-family:sans-serif;
+   }
+</style>
+<h1 id='dem'>CART</h1>
+
+<table class='table table-striped'>
+
+  <tr><th scope='col pl-2 mr-2'>PRODUCT </th>
+    <th scope='col pl-2 mr-2'>PRICE/ITEM</th>
+     <th scope='col pl-2 mr-2'>QUANTITY</th> 
+     <th scope='col pl-2 mr-2 '>TOTAL</th>
+    </tr>
+   {% if not citems %} 
+     <h3>YOUR SHOPPING CART IS EMPTY</h3>
+      <a  href={% url "store"%} > <button  class='btn btn-outline'>CONTINUE SHOPPING</button></a>    
+    {% else %}
+    {% for item in citems %}
+    <tr>
+     <td>
+      <figure  class='itemside align-item-center'  >
+        <div class='aside'>
+          <img src='{{item.product.images.url}}'  class='img-sm' >
+        </div>   
+        <figurecaption class='info'>
+          <a  href='#' class='title text-dark'   ></a>
+          <h6>{{item.product.pname}}</h6>
+        </figurecaption>
+      </figure> 
+     </td>
+     <td></td>
+     <td> 
+      <div class='row'>
+       <div class='input-group input-spinner'>
+         <button class='text-wrap' type='button'   id='bp'>
+         <a href='{% url "rem_cart" item.product.id %}'>  <i class='fa fa-minus'></i></a>
+          
+         </button>
+         <input  type='text' class='form-control' value='{{item.quantity}}'>
+         <div class='input-group append'>
+          <button class='text-wrap' type='button'  id='bp'>
+          <a href='{% url "add_cart" item.product.id %}'>  <i class='fa fa-plus'></i></a>
+           
+         </div>
+       </div></div>
+     </td>
+    </tr>
+     
+   
+   
+    <tr>
+    <td class='nav-item '>
+
+      {{item.product.pname }}
+    </td>
+    <td class='nav nav-item '><i class="fa fa-inr"></i>
+     {{item.product.price}}
+    </td>
+    <td class='nav-item '>
+      {{item.quantity}}
+    </td>
+    <td class='nav-item '><i class="fa fa-inr"></i>
+      {{item.tot}}
+    </td>
+
+    
+  </tr>
+      {% endfor %}
+  <tr><td></td><td></td><td></td><td><i class="fa fa-inr"></i>{{total}}</td></tr>
+  <tr><td></td><td></td><td>TAX: </td><td><i class="fa fa-inr"></i>{{taxx}}</td></tr>
+  <tr><td></td><td></td><td>GRAND TOTAL:</td><td><i class="fa fa-inr"></i>{{gtotal}}</td></tr>
+
+</table>
+
+{% endif %}
+{% endblock %}

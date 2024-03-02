@@ -1,0 +1,13 @@
+p{
+    color:#606c38;
+    animation:mm 5s infinite;
+}
+@keyframes mm{
+    0%   {color:#606c38;}
+    10%   {color:#283618   ;}
+    20%   {color:#780000  ;}
+    30%   {color:#c1121f    ;}
+    40%   {color:#f77f00  ;}
+    50%   {color:#ff7d00   ;}
+    
+}

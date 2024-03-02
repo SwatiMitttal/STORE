@@ -1,0 +1,21 @@
+{% extends 'lgroup.html' %}
+    {% load static%}
+    {% block content %}
+<p id='demo'></p>
+
+  <script type='text/babel'>
+    
+   
+    class Pcomp extends React.Component{
+      render(){
+         return <div>
+        I AM REACT COMPONENT
+        
+         </div>
+      }
+    }
+    const root=ReactDOM.createRoot(document.getElementById('demo'));
+    root.render(<Pcomp/>)
+ </script>
+
+{% endblock %}

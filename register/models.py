@@ -17,3 +17,7 @@ class Account(models.Model):
     
     UNAME_FIELD='email'
     REQUIRED_FIELDS=['fname','lname','email','mobile']
+    
+    
+    def __str__(self):
+        return self.fname+self.lname

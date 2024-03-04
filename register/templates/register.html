@@ -1,4 +1,15 @@
 {% extends 'page2.html' %}
 {% load static %}
 
+{% block content2 %}
+<h3>SIGNUP</h3><br></br><br></br>
+<form method='POST'  action='{% url "signup"%}'>
+ <label class='form-group'>NAME </label>
+   {{form.fname}}{{form.lname}}
+   <label class='form-group'>EMAIL </label>
+   {{form.email}}
+   <label class='form-group'>MOBILE </label>
+   {{form.mobile}}
+</form>
 
+{% endblock %}

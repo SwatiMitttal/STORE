@@ -28,7 +28,7 @@ def store(req,cslug):
     
     context={
         'prods':pprods,
-        'pcount':pprods.count()
+        #'pcount':pprods.count()
         
     }
     

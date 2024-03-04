@@ -4,36 +4,42 @@
 {% block content2 %}
 
 
-  <ul class='nav nav-tabs' style='width:40%;'>
-    <li class='nav-item '> <h3>REGISTER</h3></li>
-    <li class='nav-item'><a  href='{% url "login" %}' > <button  >LOGIN</button></li></a>
+  <ul class='nav nav-tabs'>
+    
+    <li class='nav-item'><a  href='{% url "login" %}' > <button >LOGIN</button></li></a>
     <li class='nav-item'><a href='{% url "signup" %}'> <button>SIGNUP</button></li></a>
+    <li class='nav-item'>
+    <a href={% url 'cart' %}>   
+      <span  class='glyphicon glyphicon-shopping-cart' ></span>
+  <span class='badge badge-pill notify' >{{cc}}</span> </a></li>
+
+<li>
+
+<form  action='{% url "search" %}' method='GET'>
+  <div class='input-group-prepend ml-3'>
+    
+    <input class='form-control' type='text' placeholder='search' name='kword'>
+   <button class='btn btn-primary'> <i class='fa fa-search ml-3' ></i></button>
+  </div>
+
+</form> </li>
+
 </ul>
 <div class='row'>
  <button class="btn  dropdown-toggle" type="button" 
            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
            <img   src='{% static "images/prods1.png" %}'  class='img-fluid' alt='' > </button>
-          <a href={% url 'cart' %}>   
-             <span  class='glyphicon glyphicon-shopping-cart' ></span>
-         <span class='badge badge-pill notify' >{{cc}}</span> </a>
+         
           <div class="dropdown-menu">
             {% for cat in links %}
               <a class="dropdown-item" href="{{cat.get_url}}">{{cat}}</a>
             {% endfor %}
           </div>
   
-    <form  action='{% url "search" %}' method='GET'>
-      <div class='input-group-prepend ml-3'>
-        
-        <input class='form-control' type='text' placeholder='search' name='kword'>
-       <button class='btn btn-primary'> <i class='fa fa-search ml-3' ></i></button>
-      </div>
-  
-    </form> 
-
+        </div>
     
 <div class='container'>
-  {% if pcount not  0 %}
+  {% if pcount > 0 %}
   <h5>{{pcount}} ITEMS FOUND</h5>
   {% endif %}
   <div class='card-product-grid'>

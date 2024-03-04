@@ -30,7 +30,7 @@ INSTALLED_APPS = [
     "django.contrib.messages",
     "django.contrib.staticfiles",
     'backend',
-    'store','cartt'
+    'store','cartt','register'
 ]
 
 MIDDLEWARE = [

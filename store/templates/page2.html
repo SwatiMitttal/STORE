@@ -3,6 +3,12 @@
 {% load static %}
 {% block content2 %}
 
+
+  <ul class='nav nav-tabs' style='width:40%;'>
+    <li class='nav-item '> <h3>REGISTER</h3></li>
+    <li class='nav-item'><a  href='{% url "login" %}' > <button  >LOGIN</button></li></a>
+    <li class='nav-item'><a href='{% url "signup" %}'> <button>SIGNUP</button></li></a>
+</ul>
 <div class='row'>
  <button class="btn  dropdown-toggle" type="button" 
            data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -24,9 +30,12 @@
       </div>
   
     </form> 
-</div>
+
+    
 <div class='container'>
+  {% if pcount not  0 %}
   <h5>{{pcount}} ITEMS FOUND</h5>
+  {% endif %}
   <div class='card-product-grid'>
             {% for product in prods %}
              

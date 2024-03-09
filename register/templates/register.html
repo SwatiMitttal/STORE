@@ -2,14 +2,29 @@
 {% load static %}
 
 {% block content2 %}
-<h3>SIGNUP</h3><br></br><br></br>
+<h5 >SIGNUP  </h5><br></br><br></br>
+
 <form method='POST'  action='{% url "signup"%}'>
+   {% csrf_token %}
  <label class='form-group'>NAME </label>
-   {{form.fname}}{{form.lname}}
+   {{form.fname}}{{form.lname}}<br></br>
    <label class='form-group'>EMAIL </label>
-   {{form.email}}
+   {{form.email}}<br></br>
    <label class='form-group'>MOBILE </label>
-   {{form.mobile}}
+   {{form.mobile}}<br></br>
+
+   <fieldset>
+<label class='mr-3'>MALE</label><input type='radio' name='gender' value='male'>
+<label class='mr-3'>FEMALE</label><input type='radio' name='gender' value='female' checked>
+
+   </fieldset>
+   <fieldset>
+      <label class='mr-3'>PASSWORD</label><input type='text' name='passw'>
+      <label class='mr-3'>RE-ENTER</label><input TYPE='text' name='passw'>
+      
+      </fieldset>
+      
+<a href='{% url "signup"%}'><button type='submit'>SUBMIT</button></a>
 </form>
 
 {% endblock %}

@@ -1,5 +1,24 @@
 from django.db import models
+from django.contrib.auth.models import BaseUserManager
 
+class Manager(BaseUserManager):
+    def create_user(self,fname,lname,email,passw):
+        if not email:
+            raise ValueError('PLS ENTER MAIL')
+                 
+        if not passw:
+            raise ValueError('PLS ENTER PASSWORD')
+        
+        user=self.model
+        {email:self.normalize_email(email),
+              fname:fname,
+              lname:lname}
+        #user.set_password(passw)
+        return user
+        def __str__(self):
+            return self.fname+self.lname
+    
+        
 # Create your models here.
 class Account(models.Model):
     fname=models.CharField(max_length=50)
